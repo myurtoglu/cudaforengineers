@@ -17,7 +17,7 @@ main.exe: main.o kernel.o device_funcs.o
 	$(NVCC) $^ -o $@ $(LDFLAGS)
 
 main.o: main.cpp kernel.h interactions.h
-	$(NVCC) $(NVCC_FLAGS) -c $< -o $@
+	$(NVCC) $(NVCC_FLAGS) $(INC) -c $< -o $@
 
 kernel.o: kernel.cu kernel.h device_funcs.cuh
 	$(NVCC) $(NVCC_FLAGS) $(INC) -c $< -o $@
