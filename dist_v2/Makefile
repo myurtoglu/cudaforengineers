@@ -9,7 +9,7 @@ main.exe: main.o aux_functions.o
 main.o: main.cpp aux_functions.h
 	$(NVCC) $(NVCC_FLAGS) -c $< -o $@
 
-aux_functions .o: aux_functions.cpp aux_functions.h
+aux_functions.o: aux_functions.cpp aux_functions.h
 	$(NVCC) $(NVCC_FLAGS) -c $< -o $@
 
 clean:
