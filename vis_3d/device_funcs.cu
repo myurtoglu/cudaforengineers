@@ -29,7 +29,7 @@ __device__ float func(int c, int r, int s, int id, int3 volSize,
   else { // block
     float x = fabsf(dx) - params.x, y = fabsf(dy) - params.y,
           z = fabsf(dz) - params.z;
-    if (x <= 0 && x <= 0 && z <= 0) return fmaxf(x, fmaxf(y, z));
+    if (x <= 0 && y <= 0 && z <= 0) return fmaxf(x, fmaxf(y, z));
     else {
       x = fmaxf(x, 0), y = fmaxf(y, 0), z = fmaxf(z, 0);
       return sqrtf(x*x + y*y + z*z);
