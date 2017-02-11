@@ -1,7 +1,7 @@
 #include "aux_functions.h"
-#include <stdlib.h>
+#include <stdlib.h> // Supports dynamic memory management.
 
-#define N 20000000 // A large array size
+#define N 20000000 // A large array size.
 
 int main()
 {
