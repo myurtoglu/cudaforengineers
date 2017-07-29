@@ -1,4 +1,4 @@
-NVCC = /usr/local/cuda/bin/nvcc
+NVCC = $(shell which nvcc)
 NVCC_FLAGS = -g -G -Xcompiler -Wall
 
 all: main.exe
