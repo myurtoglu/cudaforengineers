@@ -15,6 +15,8 @@ void ddKernel(float *d_out, const float *d_in, int size, float h) {
 
   // Halo cells
   if (threadIdx.x < RAD) {
+    // careful: the two lines below will also access d_in[-1] and d_in[size+1] which 
+    // are undefined! This bug is fixed in heat_2d (cf. idxClip function)
     s_in[s_idx - RAD] = d_in[i - RAD];
     s_in[s_idx + blockDim.x] = d_in[i + blockDim.x];
   }
